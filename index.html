@@ -36,6 +36,11 @@
     Email: <input name="email" required="" size="75" type="email"/> 
     <br><br>
     <input name="submit" type="submit" value="submit"/>
+    <br><br>
+    Tests: 
+    <button id="reset">RESET ANALYTICS</button>
+    <button id="debugOn">DEBUG ON</button>
+    <button id="debugOff">DEBUG OFF</button>
 </form> 
     <script type="text/javascript">
       function identify(e){
@@ -55,11 +60,25 @@
             email: email, 
             name: fullname
         });
-        analytics.track('destination submitted', user, function() {
+        analytics.track('Form Submitted', user, function() {
             window.location.href = "";
         });
       }
     </script>  
+    <script>
+        let resetButton = document.getElementById('reset')
+        resetButton.addEventListener('click', () => {
+            analytics.reset()
+        })
+        let debugButtonOn = document.getElementById('debugOn')
+        debugButtonOn.addEventListener('click', () => {
+            analytics.debug(true)
+        })
+        let debugButtonOff = document.getElementById('debugOff')
+        debugButtonOff.addEventListener('click', () => {
+            analytics.debug(false)
+        })        
+    </script>
 </body>
 </html>
     
