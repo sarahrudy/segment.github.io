@@ -18,7 +18,7 @@
   analytics.ready(function() {  
     gtag('get', 'G-NEW5YWCBDT', 'client_id', function(result) {
     clientId = result
-    console.log('Coming from the ready function >> My GA universal client ID is: ' + clientId);
+    console.log('Coming from the ready function >> My client ID is: ' + clientId);
   });
 })
 </script>
@@ -34,7 +34,6 @@
 </head> 
 <body> 
 <h1>What is your favorite place to travel?</h1> 
-<p>I am building a directory of cool travel destinations.</p>  
 <form name="travel" onsubmit="identify(event)">
      What is your favorite travel destination?
     <input name="destination" required="" size="81" type="text"/> 
